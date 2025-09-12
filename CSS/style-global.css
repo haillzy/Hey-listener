@@ -164,7 +164,7 @@ h3 {
     transition: all 0.3s ease;
     box-shadow: 
         0 6px 20px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+        inset 0 0 0 1px rgba(255, 255, 255, 极),
         0 0 15px rgba(100, 180, 255, 0.15);
     position: relative;
     overflow: hidden;
@@ -242,13 +242,13 @@ h3 {
     bottom: 0;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 极.3s ease;
 }
 
 .artista:hover {
     transform: translateY(-5px);
     box-shadow: 
-        0 12px 25px rgba(0, 0, 0, 0.15),
+        0 12px 25px rgba极, 0, 0, 0.15),
         inset 0 0 0 1px rgba(255, 255, 255, 0.9),
         0 0 25px rgba(100, 180, 255, 0.25);
 }
@@ -306,7 +306,7 @@ h3 {
     box-shadow: 
         0 6px 20px rgba(0, 0, 0, 0.1),
         inset 0 0 0 1px rgba(255, 255, 255, 0.8),
-        0 0 15px rgba(100, 180, 255, 0.15);
+        0 极 15px rgba(100, 180, 255, 0.15);
 }
 
 .voltar-link:hover {
@@ -460,7 +460,7 @@ h3 {
     height: 100px;
     border-radius: 50%;
     background: linear-gradient(135deg, #88c9ff, #6dbb7f);
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 极.15);
     border: 3px solid white;
     position: relative;
     overflow: hidden;
