@@ -47,61 +47,64 @@ header {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
 }
 
-section {
+.artistas-section {
+    grid-column: 1 / -1;
+}
+
+.artista-destaque {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    border-radius: 15px;
+    padding: 20px;
     margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
 }
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 25px;
-    font-weight: 600;
-    color: #fff;
+.destaque-info {
+    flex: 1;
 }
 
-h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    font-weight: 500;
-    color: #ccc;
-}
-
-.categoria {
-    margin-bottom: 25px;
-}
-
-.item {
-    display: block;
-    background-color: #1a1a1a;
-    border-radius: 12px;
-    padding: 15px;
+.destaque-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
     margin-bottom: 10px;
-    transition: background-color 0.2s;
-    text-decoration: none;
-    color: inherit;
+    font-weight: 600;
 }
 
-.item:hover {
-    background-color: #252525;
-}
-
-.item .info h4 {
-    font-size: 16px;
-    color: #fff;
+.destaque-info h3 {
+    font-size: 1.8rem;
+    color: white;
     margin-bottom: 5px;
 }
 
-.item .info p {
-    font-size: 14px;
-    color: #aaa;
+.destaque-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.destaque-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid white;
+    flex-shrink: 0;
 }
 
 .artistas-lista {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
 }
 
@@ -109,33 +112,35 @@ h3 {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 12px;
+    padding: 15px;
     background-color: #1a1a1a;
     border-radius: 12px;
     text-decoration: none;
     color: inherit;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
 }
 
 .artista:hover {
     background-color: #252525;
+    transform: translateY(-2px);
 }
 
-.avatar {
+.artista .avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    flex-shrink: 0;
 }
 
-.detalhes h3 {
-    margin-bottom: 5px;
-    font-size: 16px;
+.artista .detalhes h3 {
+    font-size: 1.1rem;
     color: #fff;
+    margin-bottom: 5px;
 }
 
-.detalhes p {
-    font-size: 14px;
+.artista .detalhes p {
+    font-size: 0.9rem;
     color: #aaa;
 }
 
@@ -169,11 +174,18 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
+    .artista-destaque {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
     }
     
-    .search-bar input {
-        font-size: 14px;
+    .destaque-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .artistas-lista {
+        grid-template-columns: 1fr;
     }
 }
