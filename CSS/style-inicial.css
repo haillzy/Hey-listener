@@ -2,141 +2,192 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Circular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #0f0f0f;
+    background-color: #121212;
     color: #ffffff;
     min-height: 100vh;
-    padding: 20px;
-    line-height: 1.6;
+    padding: 16px;
+    line-height: 1.5;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding-bottom: 100px;
 }
 
 header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    background-color: #121212;
+    padding: 10px 0;
+    z-index: 100;
 }
 
 .search-bar {
     width: 100%;
+    position: relative;
 }
 
 .search-bar input {
     width: 100%;
-    padding: 15px 20px;
+    padding: 12px 45px 12px 20px;
     border: none;
-    border-radius: 30px;
-    background-color: #1a1a1a;
+    border-radius: 25px;
+    background-color: #242424;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 .search-bar input::placeholder {
-    color: #888;
+    color: #b3b3b3;
 }
 
 .search-bar input:focus {
-    outline: 2px solid #555;
+    outline: none;
+    background-color: #2a2a2a;
+}
+
+.search-bar::after {
+    content: "🔍";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b3b3b3;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 h2 {
     font-size: 24px;
-    margin-bottom: 25px;
-    font-weight: 600;
+    margin-bottom: 20px;
+    font-weight: 700;
     color: #fff;
 }
 
 h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 12px;
     font-weight: 500;
-    color: #ccc;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .categoria {
     margin-bottom: 25px;
 }
 
-.item {
-    display: block;
-    background-color: #1a1a1a;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 10px;
-    transition: background-color 0.2s;
-    text-decoration: none;
-    color: inherit;
+.lancamentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
 }
 
-.item:hover {
-    background-color: #252525;
+.lancamentos .categoria {
+    background-color: #181818;
+    border-radius: 8px;
+    padding: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.lancamentos .categoria:hover {
+    background-color: #282828;
+}
+
+.item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .item .info h4 {
     font-size: 16px;
     color: #fff;
     margin-bottom: 5px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .item .info p {
     font-size: 14px;
-    color: #aaa;
+    color: #b3b3b3;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artistas {
+    margin-top: 10px;
 }
 
 .artistas-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
 }
 
 .artista {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
-    padding: 12px;
-    background-color: #1a1a1a;
-    border-radius: 12px;
+    padding: 16px;
+    background-color: #181818;
+    border-radius: 8px;
     text-decoration: none;
     color: inherit;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s ease;
 }
 
 .artista:hover {
-    background-color: #252525;
+    background-color: #282828;
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.detalhes {
+    text-align: center;
+    width: 100%;
 }
 
 .detalhes h3 {
-    margin-bottom: 5px;
     font-size: 16px;
     color: #fff;
+    margin-bottom: 5px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .detalhes p {
     font-size: 14px;
-    color: #aaa;
+    color: #b3b3b3;
+    margin: 0;
 }
 
 .logo {
@@ -153,7 +204,7 @@ h3 {
 .logo-icon {
     width: 100%;
     height: 100%;
-    background-color: #ff6b6b;
+    background-color: #1DB954;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -162,6 +213,7 @@ h3 {
     font-weight: bold;
     font-size: 18px;
     transition: transform 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .logo:hover .logo-icon {
@@ -169,11 +221,29 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
+    .lancamentos,
+    .artistas-lista {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    
+    .avatar {
+        width: 100px;
+        height: 100px;
     }
     
     .search-bar input {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lancamentos,
+    .artistas-lista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    body {
+        padding: 12px;
     }
 }
