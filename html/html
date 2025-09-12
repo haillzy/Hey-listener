@@ -3,13 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hey, listener</title>
+    <title>hey,listener</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<link ref="stylesheet" href="style.css" />
 <body>
-    <header> 
-        <h1> Hey, listener </h1>
-    </header>
-    
+    <div class="container">
+        <header>
+            <div class="search-bar">
+                <input type="text" placeholder="pesquise aqui...">
+            </div>
+        </header>
+
+        <main>
+            <section class="lancamentos">
+                <h2>Langamentos</h2>
+                
+                <div class="categoria">
+                    <h3>Recentes</h3>
+                    <a href="lancamentos.html" class="item">
+                        <div class="info">
+                            <h4>KARMA</h4>
+                            <p>Stray Kids</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="categoria">
+                    <h3>Atlista</h3>
+                    <a href="lancamentos.html" class="item">
+                        <div class="info">
+                            <h4>Pisca Duas vezes</h4>
+                            <p>NandaTsunami</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="categoria">
+                    <h3>ClipMami</h3>
+                    <a href="lancamentos.html" class="item">
+                        <div class="info">
+                            <h4>Color outside</h4>
+                            <p>CORTIS</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="categoria">
+                    <h3>Exorcista da família</h3>
+                    <a href="lancamentos.html" class="item">
+                        <div class="info">
+                            <h4>MC VV</h4>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="artistas">
+                <h2>Playlists Artistas</h2>
+                <div class="artistas-lista">
+                    <a href="slipmami.html" class="artista">
+                        <div class="avatar"></div>
+                        <div class="detalhes">
+                            <h3>SlipMami</h3>
+                            <p>Artista</p>
+                        </div>
+                    </a>
+                    
+                    <a href="cortis.html" class="artista">
+                        <div class="avatar"></div>
+                        <div class="detalhes">
+                            <h3>CORTIS</h3>
+                            <p>Artista</p>
+                        </div>
+                    </a>
+                    
+                    <a href="straykids.html" class="artista">
+                        <div class="avatar"></div>
+                        <div class="detalhes">
+                            <h3>Stray Kids</h3>
+                            <p>Artista</p>
+                        </div>
+                    </a>
+                    
+                    <a href="duquesa.html" class="artista">
+                        <div class="avatar"></div>
+                        <div class="detalhes">
+                            <h3>Duquesa</h3>
+                            <p>Artista</p>
+                        </div>
+                    </a>
+                    
+                    <a href="nandatsunami.html" class="artista">
+                        <div class="avatar"></div>
+                        <div class="detalhes">
+                            <h3>NandaTsunami</h3>
+                            <p>Artista</p>
+                        </div>
+                    </a>
+                    
+                    <a href="mcvv.html" class="artista">
+                        <div class="avatar"></div>
+                        <div class="detalhes">
+                            <h3>MC VV</h3>
+                            <p>Artista</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <a href="inicial.html" class="logo">
+            <div class="logo-icon">h,l</div>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
