@@ -2,244 +2,373 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Circular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #121212;
-    color: #ffffff;
+    background: linear-gradient(to bottom, #a8d5ff, #6bb5ff);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #2c3e50;
     min-height: 100vh;
-    padding: 16px;
-    line-height: 1.5;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(174, 214, 241, 0.5) 0%, transparent 25%),
+        radial-gradient(circle at 80% 20%, rgba(255, 222, 173, 0.4) 0%, transparent 25%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 100px;
+    position: relative;
 }
 
 header {
     margin-bottom: 30px;
-    position: sticky;
-    top: 0;
-    background-color: #121212;
-    padding: 10px 0;
-    z-index: 100;
 }
 
 .search-bar {
-    width: 100%;
-    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .search-bar input {
     width: 100%;
-    padding: 12px 45px 12px 20px;
+    max-width: 500px;
+    padding: 15px 25px;
     border: none;
-    border-radius: 25px;
-    background-color: #242424;
-    color: #ffffff;
-    font-size: 14px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    outline: none;
     transition: all 0.3s ease;
-}
-
-.search-bar input::placeholder {
-    color: #b3b3b3;
+    color: #2c3e50;
 }
 
 .search-bar input:focus {
-    outline: none;
-    background-color: #2a2a2a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 2px #6bb5ff;
+    transform: translateY(-2px);
 }
 
-.search-bar::after {
-    content: "🔍";
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #b3b3b3;
+.search-bar input::placeholder {
+    color: #7f8c8d;
+}
+
+.logo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.logo-icon {
+    font-weight: bold;
+    color: #6bb5ff;
+    font-size: 24px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+    color: #2c3e50;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .artistas-section {
     width: 100%;
 }
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: #fff;
-}
-
 .artista-destaque {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #1DB954, #191414);
-    border-radius: 8px;
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
     margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
     position: relative;
     overflow: hidden;
 }
 
-.destaque-info {
-    flex: 1;
+.artista-destaque::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+    opacity: 0.6;
+    transform: rotate(30deg);
 }
 
 .destaque-badge {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.2);
+    background: #ffaa5b;
     color: white;
-    padding: 5px 12px;
+    padding: 5px 15px;
     border-radius: 15px;
     font-size: 12px;
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .destaque-info h3 {
     font-size: 28px;
-    color: white;
     margin-bottom: 5px;
-    font-weight: 700;
+    color: #2c3e50;
 }
 
 .destaque-info p {
-    color: rgba(255, 255, 255, 0.9);
+    color: #7f8c8d;
     font-size: 16px;
-    margin: 0;
 }
 
 .destaque-avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(45deg, #6bb5ff, #3ac983);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border: 3px solid white;
-    flex-shrink: 0;
-    margin-left: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.destaque-avatar::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    transform: rotate(30deg);
 }
 
 .artistas-lista {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
 .artista {
     display: flex;
     align-items: center;
-    gap: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     padding: 15px;
-    background-color: #181818;
-    border-radius: 8px;
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+}
+
+.artista::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .artista:hover {
-    background-color: #282828;
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.artista:hover::before {
+    opacity: 1;
 }
 
 .artista .avatar {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
-    flex-shrink: 0;
+    margin-right: 15px;
+    background: linear-gradient(45deg, #6bb5ff, #3ac983);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+}
+
+.artista .avatar::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transform: rotate(30deg);
 }
 
 .artista .detalhes h3 {
-    font-size: 16px;
-    color: #fff;
+    font-size: 18px;
     margin-bottom: 5px;
-    font-weight: 600;
+    color: #2c3e50;
 }
 
 .artista .detalhes p {
+    color: #7f8c8d;
     font-size: 14px;
-    color: #b3b3b3;
-    margin: 0;
 }
 
-.logo {
+.bubble {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    z-index: 100;
-    text-decoration: none;
-}
-
-.logo-icon {
-    width: 100%;
-    height: 100%;
-    background-color: #1DB954;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: transform 0.3s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
 }
 
-.logo:hover .logo-icon {
-    transform: scale(1.1);
+.bubble-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 5%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.bubble-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 15%;
+    right: 10%;
+    animation: float 10s ease-in-out infinite 1s;
+}
+
+.bubble-3 {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 8%;
+    animation: float 7s ease-in-out infinite 0.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.destaque-avatar,
+.avatar {
+    animation: float 5s ease-in-out infinite;
 }
 
 @media (max-width: 768px) {
     .artista-destaque {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
     }
-    
-    .destaque-avatar {
-        margin-left: 0;
-        width: 80px;
-        height: 80px;
+
+    .destaque-info {
+        margin-bottom: 20px;
     }
-    
+
     .artistas-lista {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-    
-    .artista {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .artista .avatar {
-        width: 80px;
-        height: 80px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
 
 @media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
     .artistas-lista {
         grid-template-columns: 1fr;
     }
-    
-    body {
-        padding: 12px;
+
+    .logo {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
     }
-    
-    .destaque-info h3 {
-        font-size: 24px;
+
+    .logo-icon {
+        font-size: 20px;
     }
 }
