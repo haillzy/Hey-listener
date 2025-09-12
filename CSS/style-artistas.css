@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    width: 100%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.search-bar input::placeholder {
+    color: #888;
+}
+
+.search-bar input:focus {
+    outline: 2px solid #555;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.artistas-section {
+    grid-column: 1 / -1;
+}
+
+.artista-destaque {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.destaque-info {
+    flex: 1;
+}
+
+.destaque-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.destaque-info h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.destaque-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.destaque-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid white;
+    flex-shrink: 0;
+}
+
+.artistas-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.artista {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.artista:hover {
+    background-color: #252525;
+    transform: translateY(-2px);
+}
+
+.artista .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    flex-shrink: 0;
+}
+
+.artista .detalhes h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.artista .detalhes p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.logo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 100;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 100%;
+    height: 100%;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+.logo:hover .logo-icon {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .artista-destaque {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .destaque-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .artistas-lista {
+        grid-template-columns: 1fr;
+    }
+}
